@@ -67,21 +67,21 @@ Assuming that **Node.js (LTS)**, **PostgreSQL with pgAdmin**, and **VS Code** ar
 
 ### Expense Tracker UI
 
-![Desktop UI with two Chart.js charts, three expense summary cards, an add expense card, and a card for filtering, editing, deleting, and exporting expenses as CSV.](frontend/assets/expense-tracker-ui-desktop.png)
+![Desktop UI with two Chart.js charts, three expense summary cards, an add expense card, and a card for filtering, editing, deleting, and exporting expenses as CSV.](assets/expense-tracker-ui-desktop.png)
 _Desktop UI._
 
-![Mobile UI showing the responsive layout for smaller screens.](frontend/assets/expense-tracker-ui-mobile.png)
+![Mobile UI showing the responsive layout for smaller screens.](assets/expense-tracker-ui-mobile.png)
 
 _Mobile UI responsive layout._
 
 ### Input Validation & Title Filtering
 
-![Desktop UI showing error handling for invalid inputs and the expense table filtered by title.](frontend/assets/invalid-input-and-filter-by-title-desktop.png)
+![Desktop UI showing error handling for invalid inputs and the expense table filtered by title.](assets/invalid-input-and-filter-by-title-desktop.png)
 _Form validation and filtering by title._
 
 ### Edit Modal & Category Filtering
 
-![Desktop UI showing the edit modal with validation preventing unchanged data, and the expense table filtered by category.](frontend/assets/edit-modal-validation-and-filter-by-category-desktop.png)
+![Desktop UI showing the edit modal with validation preventing unchanged data, and the expense table filtered by category.](assets/edit-modal-validation-and-filter-by-category-desktop.png)
 _Edit modal validation and filtering by category._
 
 ## 🎥 Video
