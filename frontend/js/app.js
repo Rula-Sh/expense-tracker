@@ -118,7 +118,7 @@ function addExpenseRow(expense) {
   btnWrapper.appendChild(deleteBtn);
   actions.appendChild(btnWrapper);
   editBtn.addEventListener("click", () => showEditExpenseModal(expense));
-  deleteBtn.addEventListener("click", () => deleteExpense(expense.id));
+  deleteBtn.addEventListener("click", async () => await deleteExpense(expense.id));
   editBtn.setAttribute("data-bs-toggle", "modal");
   editBtn.setAttribute("data-bs-target", "#edit-modal");
 
@@ -131,7 +131,7 @@ function addExpenseRow(expense) {
   tableBody.appendChild(row);
 }
 
-Addform.addEventListener("submit", (event) => {
+Addform.addEventListener("submit", async (event) => {
   event.preventDefault();
   Addform.classList.add("was-validated");
 
@@ -143,7 +143,7 @@ Addform.addEventListener("submit", (event) => {
   };
 
   if (Addform.checkValidity()) {
-    addExpense(newExpense);
+    await addExpense(newExpense);
     Addform.classList.remove("was-validated");
     Addform.reset();
   } else {
@@ -238,7 +238,6 @@ async function deleteExpense(id) {
   try {
     const response = await fetch(`${API_URL}/${id}`, {
       method: "DELETE",
-      headers: { "Content-Type": "application/json" },
     });
 
     await throwIfNotOk(response);

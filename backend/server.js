@@ -38,7 +38,7 @@ app.get("/api/expenses/:id", async (req, res) => {
     const { id } = req.params;
 
     if (!Number.isInteger(Number(id)) || Number(id) <= 0) {
-      return res.status(404).json({ error: "ID must be a number." });
+      return res.status(400).json({ error: "ID must be a number." });
     }
 
     const result = await pool.query(
@@ -95,8 +95,8 @@ app.put("/api/expenses/:id", async (req, res) => {
     const { id } = req.params;
     const { title, amount, category, date } = req.body;
 
-    if (!Number.isInteger(Number(id))) {
-      return res.status(404).json({ error: "ID must be a number." });
+    if (!Number.isInteger(Number(id)) || Number(id) <= 0) {
+      return res.status(400).json({ error: "ID must be a number." });
     }
 
     const existingExpense = await pool.query("SELECT id FROM expenses WHERE id = $1", [
@@ -143,7 +143,7 @@ app.delete("/api/expenses/:id", async (req, res) => {
     const { id } = req.params;
 
     if (!Number.isInteger(Number(id)) || Number(id) <= 0) {
-      return res.status(404).json({ error: "ID must be a number." });
+      return res.status(400).json({ error: "ID must be a number." });
     }
 
     const result = await pool.query(
